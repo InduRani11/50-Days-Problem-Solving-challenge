@@ -1,0 +1,32 @@
+/* Linklist node structure
+class Node
+{
+    int data;
+    Node next;
+
+    Node(int d)
+    {
+        data = d;
+        next = null;
+    }
+}*/
+class Solution {
+    Node deleteNode(Node head, int x) {
+        Node temp=head;
+        if(x==1){
+            head=head.next;
+        }
+        // if(x==1){
+        //     head.next=head.next.next;
+        // }
+        int count=1;
+        while(temp!=null){
+            if(count==x-1){
+                temp.next=temp.next.next;
+            }
+            count++;
+            temp=temp.next;
+        }
+        return head;
+    }
+}
